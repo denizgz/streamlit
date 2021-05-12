@@ -18,8 +18,6 @@ import plotly.express as px
 def get_data():
     return pd.read_csv(r'C:\Users\deniz\OneDrive\Dokumente\GitHub\streamlit\life_pop_gni.csv')
 
-'# Year'
-
 df = get_data()
 
 min_year = int(df['year'].min())
