@@ -24,7 +24,8 @@ min_year = int(df['year'].min())
 max_year = int(df['year'].max())
 
 countries = df['country'].unique()
-df.GNI.fillna(0)
+df['GNI'] = df.GNI.fillna(method='ffill')
+df['GNI'] = df.GNI.fillna(method='bfill')
 
 '## By year'
 year = st.slider('year', min_year, max_year, step=1)
