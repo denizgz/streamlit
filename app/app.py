@@ -2,10 +2,7 @@
 import streamlit as st
 import pandas as pd
 import seaborn as sns
-import pylab
-import altair as alt
 import matplotlib.pyplot as plt
-from matplotlib import pyplot
 
 # Import data
 # df = pd.read_csv("C:/Users/deniz/OneDrive - HWR Berlin/2. sem/Big Data and Architectures/gapminderviz-master/gapminder_tidy.csv")
@@ -47,5 +44,6 @@ fig, ax = plt.subplots()
 ax.set(xscale="log")
 ax.set_xlim([10**2, 10**5])
 
-sns.scatterplot(data=subset, x="GNI", y="life_exp", size="pop", legend='brief',hue='country')
+sns.scatterplot(data=subset, x="GNI", y="life_exp", size="pop", legend='brief',hue='country', sizes = (subset['pop'].min()/1000000, subset['pop'].max()/1000000))
 st.pyplot(fig)
+
